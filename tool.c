@@ -41,16 +41,3 @@ void printSRecords(SRecord srecords[], int numSRecords) {
         printf("%-14s %-7s %8d    %-10s %4.1f %5.1f %5.1f %5.1f %6.1f %6.1f\n", srecords[i].student.name, srecords[i].student. department, srecords[i].student.grade, srecords[i].student.sid, srecords[i].hw, srecords[i].quiz, srecords[i].midterm, srecords[i].final, srecords[i].other, srecords[i].total);
     }
 }
-
-void randomInitStudents(Student students[], int numStudents) {
-    // Seed the random number generator
-    srand(time(NULL));
-
-    for (int i = 0; i < numStudents; i++) {
-        // Generate random student data
-        sprintf(students[i].name, "Student %03d", i + 1);
-        sprintf(students[i].department, "Department %d", rand() % 5 + 1);
-        students[i].grade = rand() % 4 + 1;
-        sprintf(students[i].sid, "SID%04d", rand() % 1000 + 1);
-    }
-}
