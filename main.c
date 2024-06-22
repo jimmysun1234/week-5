@@ -5,6 +5,9 @@
 #define MAX_STUDENT 100
 
 void displayMenu() {
+    saveDefaultColor();
+    setColor(GREEN);
+    setBackgroundColor(WHITE);
     printf("\nMenu:\n");
     printf("1. Read student records from CSV\n");
     printf("2. Print student records\n");
@@ -12,6 +15,7 @@ void displayMenu() {
     printf("4. Search student records by name or SID\n");
     printf("5. Exit\n");
     printf("Enter your choice: ");
+    resetColor();
 }
 
 int searchRecords(SRecord srecords[], int numSRecords, const char *keyword) {
@@ -40,8 +44,11 @@ int main() {
 
         switch (choice) {
             case 1:
+                setColor(GREEN);
+                setBackgroundColor(WHITE);
                 numSRecords = readSRecordsFromCSV("records.csv", srecords, MAX_STUDENT);
                 printf("Number of records read: %d\n", numSRecords);
+                resetColor();
                 break;
             case 2:
                 if (numSRecords > 0) {
@@ -52,7 +59,7 @@ int main() {
                 break;
             case 3:
                 if (numSRecords > 0) {
-                    sortSRecords(srecords, numSRecords, "total");
+                    sortSRcord(srecords, numSRecords, "total");
                     printf("\n\nAfter sorting by total:\n");
                     printSRecords(srecords, numSRecords);
                 } else {
