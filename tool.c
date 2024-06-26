@@ -5,12 +5,10 @@
 
 void printSRecords(SRecord srecords[], int numSRecords) {
     saveDefaultColor();
-    setColor(GREEN);
-    setBackgroundColor(WHITE);
+    setColor(BLUE);
     printf("%-8s %5s %8s    %-6s %5s %6s %5s %6s %6s %6s\n", " Name", "Department", "Grade", "SID", "HW", "Quiz", "Mid", "Final", "Other", "Total");
     printf("--------------------------------------------------------------------------------\n");
-    setColor(BLUE);
-    setBackgroundColor(WHITE);
+    setColor(GREEN);
     for (int i=0; i<numSRecords; i++){
         printf("%-14s %-7s %8d    %-10s %4.1f %5.1f %5.1f %5.1f %6.1f %6.1f\n", srecords[i].student.name, srecords[i].student. department, srecords[i].student.grade, srecords[i].student.sid, srecords[i].hw, srecords[i].quiz, srecords[i].midterm, srecords[i].final, srecords[i].other, srecords[i].total);
     }
