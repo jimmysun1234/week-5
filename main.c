@@ -6,8 +6,7 @@
 
 void displayMenu() {
     saveDefaultColor();
-    setColor(GREEN);
-    setBackgroundColor(WHITE);
+    setColor(BLUE);
     printf("\nMenu:\n");
     printf("1. Read student records from CSV\n");
     printf("2. Print student records\n");
@@ -44,11 +43,8 @@ int main() {
 
         switch (choice) {
             case 1:
-                setColor(GREEN);
-                setBackgroundColor(WHITE);
                 numSRecords = readSRecordsFromCSV("records.csv", srecords, MAX_STUDENT);
                 printf("Number of records read: %d\n", numSRecords);
-                resetColor();
                 break;
             case 2:
                 if (numSRecords > 0) {
